@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+  button{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    background-color: green;
+  }
+
+  </style>
+
+
+</head>
+
+<body>
+      <h2>Date : - </h2>
+      <div>
+      <button> 16EC200</button>
+      </div>
+<script>
+var html="";
+
+/* define an array which tells whether student present or absent.
+  1st index corresponds to 16ec201, 2nd index corresponds to 16ec202 and so on.........
+  Zero index is dummy index(no significance)
+  This array is passed to the database
+
+*/
+var present=[9];
+//For 16EC201 to 16EC209
+for(var i=1; i<=9; i++){
+
+  html += '<button> 16EC20'+ i + ' </button>';
+
+  present.push(1);
+}
+//For 16EC210 to 16EC256
+for(var i=10; i<=56; i++){
+
+  html += '<button> 16EC2'+ i + ' </button>';
+
+  present.push(1); //default value is present
+}
+
+$(document).ready(function(){
+
+  $('body').append(html);
+
+  //To create toggling effect between red(0 in array) and green(1) on clicking the button
+  $('button').on('click',function(){
+
+    console.log($("button").css('background-color'));
+    var j=$('button').index(this)
+
+
+    if($(this).css('background-color') == 'rgb(0, 128, 0)')
+    {
+
+      $(this).css('background-color','red');
+      present[j] = 0;
+    }
+    else {
+
+      $(this).css('background-color','green');
+      present[j] = 1;
+    }
+
+      console.log(present); //test
+  });
+
+});
+
+</script>
+
+
+
+
+</body>
+</html>
