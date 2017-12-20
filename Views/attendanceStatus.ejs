@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+  table, th, td{
+    border: 1px solid black;
+  }
+  body {
+    padding-top: 65px;
+  }
+  </style>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+
+     <ul class="nav navbar-nav">
+       <li ><a href="/attendancePortal">Home</a></li>
+       <!--<li><a href="#">Page 1</a></li>
+       <li><a href="#">Page 2</a></li>
+       <li><a href="#">Page 3</a></li>-->
+     </ul>
+   </div>
+  </nav>
+    <div class="text-center text-primary">
+        <h1> Attendance Status </h1>
+    </div>
+
+    <div class="as">
+        <table>
+          <th>Roll Number</th>
+          <th> Days Present </th>
+          <th>Dates of Absence</th>
+
+            <% for(var i=0; i< orderedData.length; i++){ %>
+
+          <tr>
+            <td> <%= orderedData[i].rollNo %> </td>
+            <td> <%= orderedData[i].daysPresent %> </td>
+            <td> <%= orderedData[i].datesOfAbs %> </td>
+          </tr>
+            <% } %>
+        </table>
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
